@@ -34,9 +34,10 @@ class Visit(models.Model):
         now_time = timezone.now()
         moscow_time_now = timezone.localtime(now_time)
         if self.leaved_at:
-          delta = timezone.localtime(self.leaved_at) - timezone.localtime(self.entered_at)
+            delta = timezone.localtime(self.leaved_at)\
+                    - timezone.localtime(self.entered_at)
         else:
-          delta = moscow_time_now - timezone.localtime(self.entered_at)
+            delta = moscow_time_now - timezone.localtime(self.entered_at)
         return delta
 
     def format_duration(self):
