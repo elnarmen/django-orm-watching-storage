@@ -39,9 +39,9 @@ class Visit(models.Model):
         else:
             delta = local_time_now - timezone.localtime(self.entered_at)
         return delta
-
     def format_duration(self):
-        return self.get_duration().total_seconds()
+        return str(self.get_duration())
+
 
     def is_visit_long(self, minutes=60):
-        return self.format_duration() // 60 > minutes
+        return self.get_duration().total_seconds() // 60 > minutes
