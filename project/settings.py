@@ -1,18 +1,18 @@
 import os
 from environs import Env
 
+
 env = Env()
 env.read_env()
 
-
 DATABASES = {
     'default': {
-        'ENGINE': env('ENGINE'),
-        'HOST': env('HOST'),
-        'PORT': env.int('PORT'),
-        'NAME': env('NAME'),
-        'USER': env('USER'),
-        'PASSWORD': env('PASSWORD'),
+        'DB_ENGINE': env('DB_ENGINE'),
+        'DB_HOST': env('DB_HOST'),
+        'DB_PORT': env.int('DB_PORT'),
+        'DB_NAME': env('DB_NAME'),
+        'DB_USER': env('DB_USER'),
+        'DB_PASSWORD': env('DB_PASSWORD'),
     }
 }
 
